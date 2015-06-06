@@ -1,0 +1,20 @@
+{
+  "name": "kayladaniels/spec",
+  "description": "Predicates in PHP",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kayla Daniels",
+      "email": "kayladnls@gmail.com"
+    }
+  ],
+  "config": {
+    "bin-dir": "bin"
+  },
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Kayladnls\\Spec\\": "src/"
+    }
+  }
+}
