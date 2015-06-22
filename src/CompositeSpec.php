@@ -3,19 +3,19 @@
 trait CompositeSpec
 {
     /**
-     * @var Spec
+     * @var Specification
      */
     protected $first;
     /**
-     * @var Spec
+     * @var Specification
      */
     protected $second;
 
     /**
-     * @param Spec $first
-     * @param Spec $second
+     * @param Specification $first
+     * @param Specification $second
      */
-    public function __construct(Spec $first, Spec $second)
+    public function __construct(Specification $first, Specification $second)
     {
         $this->first = $first;
         $this->second = $second;

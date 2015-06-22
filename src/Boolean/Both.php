@@ -1,12 +1,13 @@
 <?php namespace Kayladnls\Spec\Boolean;
 
 use Kayladnls\Spec\CompositeSpec;
-use Kayladnls\Spec\Spec;
+use Kayladnls\Spec\Specification;
 use Kayladnls\Spec\Specified;
 
-class Both implements Spec
+class Both implements Specification
 {
-    use Specified, CompositeSpec{
+
+    use CompositeSpec, Specified {
         CompositeSpec::__construct insteadof Specified;
     }
 

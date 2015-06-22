@@ -14,10 +14,12 @@
   "minimum-stability": "stable",
   "autoload": {
     "psr-4": {
-      "Kayladnls\\Specification\\": "src/"
-    }
+      "Kayladnls\\Spec\\": "src/"
+    },
+    "files": ["src/helper.php"]
   },
   "require-dev": {
     "phpspec/phpspec": "^2.2",
+    "phpspec/nyan-formatters": "~1.0"
   }
 }

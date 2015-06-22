@@ -1,21 +1,21 @@
 <?php namespace Kayladnls\Spec\Boolean;
 
-use Kayladnls\Spec\Spec;
+use Kayladnls\Spec\Specification;
 use Kayladnls\Spec\Specified;
 
-class Not implements Spec
+class Not implements Specification
 {
     use Specified;
 
     /**
-     * @var Spec
+     * @var Specification
      */
     protected $negative;
 
     /**
-     * @param Spec $negative
+     * @param Specification $negative
      */
-    public function __construct(Spec $negative)
+    public function __construct(Specification $negative)
     {
         $this->negative = $negative;
     }

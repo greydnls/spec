@@ -4,31 +4,31 @@ use Kayladnls\Spec\Boolean\Both;
 use Kayladnls\Spec\Boolean\Either;
 
 /**
- * @param Spec $first
- * @param Spec $second
+ * @param Specification $first
+ * @param Specification $second
  * @return Both
  */
-function both(Spec $first, Spec $second)
+function both(Specification $first, Specification $second)
 {
     return new Both($first, $second);
 }
 
 /**
- * @param Spec $first
- * @param Spec $second
+ * @param Specification $first
+ * @param Specification $second
  * @return Either
  */
-function either(Spec $first, Spec $second)
+function either(Specification $first, Specification $second)
 {
     return new Either($first, $second);
 }
 
 /**
  * @param $subject
- * @param Spec $specification
+ * @param Specification $specification
  * @return mixed
  */
-function satisfies($subject, Spec $specification)
+function satisfies($subject, Specification $specification)
 {
     return $specification->isSatisfiedBy($subject);
 }
