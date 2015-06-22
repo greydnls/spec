@@ -18,6 +18,9 @@
     },
     "files": ["src/helper.php"]
   },
+  "require" : {
+    "php": ">=5.5"
+  }
   "require-dev": {
     "phpspec/phpspec": "^2.2",
     "phpspec/nyan-formatters": "~1.0"
