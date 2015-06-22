@@ -17,7 +17,7 @@ the context of domain-driven design." -- [wikipedia](https://en.wikipedia.org/wi
 ### How do I use it?
 
 #### Use the builder
-```
+```php
 $and_spec = Kayladnls/Spec/Builder::both(new MustHaveFourLegs(), new MustHaveStripesSpec());
 
 $and_spec->isSatisfiedBy($elephpant) //False 
@@ -32,7 +32,7 @@ Or, you can use functions if that's what tickles your fancy.
 
 #### Function Based
 
-```
+```php
 $and_spec = Kayladnls/Spec/both(new MustHaveFourLegs(), new MustHaveStripesSpec());
 
 satisfies($elephpant, $and_spec) //False 
@@ -44,7 +44,7 @@ satisfies($iguana, $or_spec) // True
 ```
 
 ### Example
-```
+```php
 if ($and_spec($zebra)){
 	// Do Some cool Zebra Stuff here. 
 }
