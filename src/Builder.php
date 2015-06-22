@@ -5,7 +5,7 @@ use Kayladnls\Spec\Boolean\Both;
 use Kayladnls\Spec\Boolean\Either;
 use Kayladnls\Spec\Boolean\Not;
 
-abstract class Builder
+class Builder
 {
     /**
      * @param Specification $first

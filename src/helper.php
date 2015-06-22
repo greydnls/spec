@@ -10,7 +10,7 @@ use Kayladnls\Spec\Boolean\Either;
  */
 function both(Specification $first, Specification $second)
 {
-    return new Both($first, $second);
+    return Builder::both($first, $second);
 }
 
 /**
@@ -20,7 +20,7 @@ function both(Specification $first, Specification $second)
  */
 function either(Specification $first, Specification $second)
 {
-    return new Either($first, $second);
+    return Builder::either($first, $second);
 }
 
 /**
