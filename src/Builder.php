@@ -1,30 +1,28 @@
 <?php namespace Kayladnls\Spec;
 
 
-use Kayladnls\Spec\Boolean\Both;
-use Kayladnls\Spec\Boolean\Either;
-use Kayladnls\Spec\Boolean\Not;
+use Kayladnls\Spec\Logical\Any;
+use Kayladnls\Spec\Logical\All;
+use Kayladnls\Spec\Logical\Not;
 
 class Builder
 {
     /**
-     * @param Specification $first
-     * @param Specification $second
+     * @param array $specifications
      * @return Both
      */
-    static public function both(Specification $first, Specification $second)
+    static public function both(array $specifications = [])
     {
-        return new Both($first, $second);
+        return new All($specifications);
     }
 
     /**
-     * @param Specification $first
-     * @param Specification $second
-     * @return Either
+     * @param array $specifications
+     * @return Any
      */
-    static public function either(Specification $first, Specification $second)
+    static public function either(array $specifications = [])
     {
-        return new Either($first, $second);
+        return new Any($specifications);
     }
 
     /**

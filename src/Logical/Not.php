@@ -1,7 +1,6 @@
-<?php namespace Kayladnls\Spec\Boolean;
+<?php namespace Kayladnls\Spec\Logical;
 
 use Kayladnls\Spec\Specification;
-use Kayladnls\Spec\Specified;
 
 class Not implements Specification
 {

@@ -1,7 +1,8 @@
 <?php
 
-namespace spec\Kayladnls\Spec\Boolean;
+namespace spec\Kayladnls\Spec\Logical;
 
+use Kayladnls\Spec\Specification;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -9,7 +10,8 @@ class NotSpec extends ObjectBehavior
 {
     function it_will_pass_with_a_false($spec)
     {
-        $spec->beADoubleOf('Kayladnls\Spec\Specification');
+        $spec->beADoubleOf(Specification::class);
+
         $spec->isSatisfiedBy('anything')->wilLReturn(false);
 
         $this->beConstructedWith($spec);
@@ -19,7 +21,8 @@ class NotSpec extends ObjectBehavior
 
     function it_will_fail_with_a_true($spec)
     {
-        $spec->beADoubleOf('Kayladnls\Spec\Specification');
+        $spec->beADoubleOf(Specification::class);
+
         $spec->isSatisfiedBy('anything')->wilLReturn(true);
 
         $this->beConstructedWith($spec);

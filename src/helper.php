@@ -1,12 +1,12 @@
 <?php namespace Kayladnls\Spec;
 
-use Kayladnls\Spec\Boolean\Both;
-use Kayladnls\Spec\Boolean\Either;
+use Kayladnls\Spec\Logical\Any;
+use Kayladnls\Spec\Logical\All;
 
 /**
  * @param Specification $first
  * @param Specification $second
- * @return Both
+ * @return All
  */
 function both(Specification $first, Specification $second)
 {
@@ -16,7 +16,7 @@ function both(Specification $first, Specification $second)
 /**
  * @param Specification $first
  * @param Specification $second
- * @return Either
+ * @return Any
  */
 function either(Specification $first, Specification $second)
 {

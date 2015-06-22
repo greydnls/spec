@@ -3,21 +3,22 @@
 trait CompositeSpec
 {
     /**
-     * @var Specification
+     * @var Specification[]
      */
-    protected $first;
-    /**
-     * @var Specification
-     */
-    protected $second;
+    protected $specifications;
 
     /**
-     * @param Specification $first
-     * @param Specification $second
+     * @param array Specification[] $specifications
+     * @throws \InvalidArgumentException
      */
-    public function __construct(Specification $first, Specification $second)
+    public function __construct(array $specifications = [])
     {
-        $this->first = $first;
-        $this->second = $second;
+        foreach ($specifications as $spec) {
+            if (!$spec instanceof Specification) {
+                throw new \InvalidArgumentException('Specifications must implement Kayladnls\Spec\Specification');
+            }
+        }
+
+        $this->specifications = $specifications;
     }
 }
