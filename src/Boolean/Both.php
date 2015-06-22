@@ -7,9 +7,7 @@ use Kayladnls\Spec\Specified;
 class Both implements Specification
 {
 
-    use CompositeSpec, Specified {
-        CompositeSpec::__construct insteadof Specified;
-    }
+    use CompositeSpec;
 
     /**
      * {@inheritdoc}

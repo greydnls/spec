@@ -45,7 +45,7 @@ satisfies($iguana, $or_spec) // True
 
 ### Example
 ```
-if ($and_spec($zebra)){
+if ($and_spec->isSatisfiedBy($zebra)){
 	// Do Some cool Zebra Stuff here. 
 }
 

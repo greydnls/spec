@@ -6,9 +6,7 @@ use Kayladnls\Spec\Specified;
 
 class Either implements Specification
 {
-    use CompositeSpec, Specified {
-        CompositeSpec::__construct insteadof Specified;
-    }
+    use CompositeSpec;
 
     /**
      * {@inheritdoc}

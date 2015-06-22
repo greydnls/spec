@@ -5,8 +5,6 @@ use Kayladnls\Spec\Specified;
 
 class Not implements Specification
 {
-    use Specified;
-
     /**
      * @var Specification
      */
