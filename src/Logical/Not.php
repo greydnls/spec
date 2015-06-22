@@ -24,5 +24,4 @@ class Not implements Specification
     {
         return $this->negative->isSatisfiedBy($argument) !== true;
     }
-
 }
