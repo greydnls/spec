@@ -9,6 +9,7 @@ class All implements Specification
 
     /**
      * {@inheritdoc}
+     * @author Franke Dejonge
      */
     public function isSatisfiedBy($payload)
     {
