@@ -4,7 +4,7 @@ use Kayladnls\Spec\CompositeSpec;
 use Kayladnls\Spec\Spec;
 use Kayladnls\Spec\Specified;
 
-class Also implements Spec
+class Both implements Spec
 {
     use Specified, CompositeSpec{
         CompositeSpec::__construct insteadof Specified;

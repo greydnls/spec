@@ -1,7 +1,7 @@
 <?php namespace Kayladnls\Spec;
 
 
-use Kayladnls\Spec\Boolean\Also;
+use Kayladnls\Spec\Boolean\Both;
 use Kayladnls\Spec\Boolean\Either;
 use Kayladnls\Spec\Boolean\Not;
 
@@ -9,7 +9,7 @@ interface Spec {
 
     /**
      * @param Spec $right
-     * @return Also
+     * @return Both
      */
     public function also(Spec $right);
 

@@ -1,6 +1,6 @@
 <?php namespace Kayladnls\Spec;
 
-use Kayladnls\Spec\Boolean\Also;
+use Kayladnls\Spec\Boolean\Both;
 use Kayladnls\Spec\Boolean\Either;
 use Kayladnls\Spec\Boolean\Not;
 
@@ -22,11 +22,11 @@ trait Specified
 
     /**
      * @param Spec $second
-     * @return Also
+     * @return Both
      */
     public function also(Spec $second)
     {
-        return new Also($this, $second);
+        return new Both($this, $second);
     }
 
     /**

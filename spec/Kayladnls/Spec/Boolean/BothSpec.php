@@ -5,7 +5,7 @@ namespace spec\Kayladnls\Spec\Boolean;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class AlsoSpec extends ObjectBehavior
+class BothSpec extends ObjectBehavior
 {
     function it_will_pass_with_two_true_values($spec1, $spec2)
     {

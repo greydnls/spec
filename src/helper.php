@@ -1,16 +1,16 @@
 <?php namespace Kayladnls\Spec;
 
-use Kayladnls\Spec\Boolean\Also;
+use Kayladnls\Spec\Boolean\Both;
 use Kayladnls\Spec\Boolean\Either;
 
 /**
  * @param Spec $first
  * @param Spec $second
- * @return Also
+ * @return Both
  */
 function both(Spec $first, Spec $second)
 {
-    return new Also($first, $second);
+    return new Both($first, $second);
 }
 
 /**
