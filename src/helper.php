@@ -4,23 +4,21 @@ use Kayladnls\Spec\Logical\Any;
 use Kayladnls\Spec\Logical\All;
 
 /**
- * @param Specification $first
- * @param Specification $second
+ * @param array $specifications
  * @return All
  */
-function both(Specification $first, Specification $second)
+function all(array $specifications = [])
 {
-    return Builder::both($first, $second);
+    return Builder::both($specifications);
 }
 
 /**
- * @param Specification $first
- * @param Specification $second
+ * @param array $specifications
  * @return Any
  */
-function either(Specification $first, Specification $second)
+function any(array $specifications = [])
 {
-    return Builder::either($first, $second);
+    return Builder::either($specifications);
 }
 
 /**

@@ -9,9 +9,9 @@ class Builder
 {
     /**
      * @param array $specifications
-     * @return Both
+     * @return All
      */
-    static public function both(array $specifications = [])
+    static public function all(array $specifications = [])
     {
         return new All($specifications);
     }
@@ -20,7 +20,7 @@ class Builder
      * @param array $specifications
      * @return Any
      */
-    static public function either(array $specifications = [])
+    static public function any(array $specifications = [])
     {
         return new Any($specifications);
     }
