@@ -1,52 +1,49 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: kayladaniels
- * Date: 6/6/15
- * Time: 11:25 AM
- */
+<?php namespace Kayladnls\Spec;
 
-namespace Kayladnls\Spec;
-
-use Kayladnls\Spec\Bool\Also;
-use Kayladnls\Spec\Bool\Either;
-use Kayladnls\Spec\Bool\Not;
+use Kayladnls\Spec\Boolean\Also;
+use Kayladnls\Spec\Boolean\Either;
+use Kayladnls\Spec\Boolean\Not;
 
 trait Specified
 {
+    /**
+     * @var mixed
+     */
     protected $argument;
 
-    public function __invoke($something = false)
+    /**
+     * @param bool $argument
+     * @return mixed
+     */
+    public function __invoke($argument)
     {
-        $this->argument = $something;
-        return $this->isSatisfiedBy($this->argument);
+        return $this->isSatisfiedBy($argument);
     }
 
-
-    public function __construct($something = null)
+    /**
+     * @param Spec $second
+     * @return Also
+     */
+    public function also(Spec $second)
     {
-        if ($something instanceof Spec) {
-
-        }
+        return new Also($this, $second);
     }
 
-    public function also(Spec $right)
+    /**
+     * @param Spec $second
+     * @return Either
+     */
+    public function either(Spec $second)
     {
-        return new Also($this, $right);
+        return new Either($this, $second);
     }
 
-    public function either(Spec $right)
-    {
-        return new Either($this, $right);
-    }
-
+    /**
+     * @param Spec $spec
+     * @return Not
+     */
     public function not(Spec $spec)
     {
         return new Not($spec);
-    }
-
-    public function isSatisfiedBy($argument)
-    {
-        throw new \Exception('Function isSatisfiedBy Must Be Defined');
     }
 }

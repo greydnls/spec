@@ -1,22 +1,23 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: kayladaniels
- * Date: 6/6/15
- * Time: 11:58 AM
- */
-
-namespace Kayladnls\Spec;
-
+<?php namespace Kayladnls\Spec;
 
 trait CompositeSpec
 {
-    protected $left;
-    protected $right;
+    /**
+     * @var Spec
+     */
+    protected $first;
+    /**
+     * @var Spec
+     */
+    protected $second;
 
-    public function __construct(Spec $left, Spec $right)
+    /**
+     * @param Spec $first
+     * @param Spec $second
+     */
+    public function __construct(Spec $first, Spec $second)
     {
-        $this->left = $left;
-        $this->right = $right;
+        $this->first = $first;
+        $this->second = $second;
     }
 }
