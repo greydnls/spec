@@ -2,7 +2,6 @@
 
 interface Specification
 {
-
     /**
      * @param $argument
      * @return boolean
