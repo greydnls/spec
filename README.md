@@ -1,7 +1,7 @@
 #Spec
 A Simple Specification library for PHP
 
-[![Build Status](https://travis-ci.org/kayladnls/spec.svg?branch=master)](https://travis-ci.org/kayladnls/spec)
+[![Build Status](https://travis-ci.org/kayladnls/spec.svg?branch=master)](https://travis-ci.org/kayladnls/spec) [![Code Climate](https://codeclimate.com/github/kayladnls/spec/badges/gpa.svg)](https://codeclimate.com/github/kayladnls/spec)
 
 ### Installation
 
