@@ -1,6 +1,7 @@
 #Spec
 A Simple Specification library for PHP
 
+[![Build Status](https://travis-ci.org/kayladnls/spec.svg?branch=master)](https://travis-ci.org/kayladnls/spec)
 
 ### Installation
 
