@@ -18,14 +18,13 @@ the context of domain-driven design." -- [wikipedia](https://en.wikipedia.org/wi
 
 #### Use the builder
 ```php
-$and_spec = Kayladnls/Spec/Builder::both(new MustHaveFourLegs(), new MustHaveStripesSpec());
+$all_spec = Kayladnls/Spec/Builder::all(new MustHaveFourLegs(), new MustHaveStripesSpec());
 
-$and_spec->isSatisfiedBy($elephpant) //False 
-$and_spec->isSatisfiedBy($zebra)     // True
+$all_spec->isSatisfiedBy($elephpant) //False 
+$all_spec->isSatisfiedBy($zebra)     // True
 
-$or_spec = Kayladnls/Spec/Builder::either($and_spec, new IsLizardSpec());
-
-$or_spec->isSatisfiedBy($iguana) // True
+$any_spec = Kayladnls/Spec/Builder::any($all_spec, new IsLizardSpec());
+$any_spec->isSatisfiedBy($iguana) // True
 ```
 
 Or, you can use functions if that's what tickles your fancy. 
@@ -33,24 +32,27 @@ Or, you can use functions if that's what tickles your fancy.
 #### Function Based
 
 ```php
-$and_spec = Kayladnls/Spec/both(new MustHaveFourLegs(), new MustHaveStripesSpec());
+$all_spec = Kayladnls/Spec/all([new MustHaveFourLegs(), new MustHaveStripesSpec()]);
 
-satisfies($elephpant, $and_spec) //False 
-satisfies($zebra, $and_spec) //True 
+Kayladnls/Spec/satisfies($elephpant, $all_spec) //False 
+Kayladnls/Spec/satisfies($zebra, $all_spec) //True 
 
-$or_spec = Kayladnls/Spec/either($and_spec, new IsLizardSpec());
+$any_spec = Kayladnls/Spec/any([$all_spec, new IsLizardSpec()]);
+Kayladnls/Spec/satisfies($iguana, $any_spec) // True
 
-satisfies($iguana, $or_spec) // True
+$none_spec = Kayladnls/Spec/none([new MustHaveFourLegs(), new MustHaveSpotsSpec()]);
+Kayladnls/Spec/satisfies($kangaroo, $none_spec) // true
+Kayladnls/Spec/satisfies($cheetah, $none_spec) // false
 ```
 
 ### Example
 ```php
-if ($and_spec->isSatisfiedBy($zebra)){
+if ($all_spec->isSatisfiedBy($zebra)){
 	// Do Some cool Zebra Stuff here. 
 }
 
 // Function Based
-if (satisfies($iguana, $orspec)){
+if (satisfies($iguana, $any_spec)){
 	// do some cool lizard-based stuff here. 
 }
 ```
