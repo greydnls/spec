@@ -6,7 +6,7 @@ use Kayladnls\Spec\Specification;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class NotSpec extends ObjectBehavior
+class NoneSpec extends ObjectBehavior
 {
     function it_will_pass_with_a_false($spec)
     {
@@ -14,7 +14,7 @@ class NotSpec extends ObjectBehavior
 
         $spec->isSatisfiedBy('anything')->wilLReturn(false);
 
-        $this->beConstructedWith($spec);
+        $this->beConstructedWith([$spec]);
 
         $this->isSatisfiedBy('anything')->shouldEqual(true);
     }
@@ -25,7 +25,7 @@ class NotSpec extends ObjectBehavior
 
         $spec->isSatisfiedBy('anything')->wilLReturn(true);
 
-        $this->beConstructedWith($spec);
+        $this->beConstructedWith([$spec]);
 
         $this->isSatisfiedBy('anything')->shouldEqual(false);
     }

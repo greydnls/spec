@@ -4,7 +4,7 @@ namespace spec\Kayladnls\Spec;
 
 use Kayladnls\Spec\Logical\All;
 use Kayladnls\Spec\Logical\Any;
-use Kayladnls\Spec\Logical\Not;
+use Kayladnls\Spec\Logical\None;
 use Kayladnls\Spec\Specification;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -17,7 +17,7 @@ class BuilderSpec extends ObjectBehavior
 
         $spec2->beADoubleOf(Specification::class);
 
-        $this->beConstructedThrough('both', [[$spec1, $spec2]]);
+        $this->beConstructedThrough('all', [[$spec1, $spec2]]);
 
         $this->shouldHaveType(All::class);
     }
@@ -28,15 +28,15 @@ class BuilderSpec extends ObjectBehavior
 
         $spec2->beADoubleOf(Specification::class);
 
-        $this->beConstructedThrough('either', [[$spec1, $spec2]]);
+        $this->beConstructedThrough('any', [[$spec1, $spec2]]);
         $this->shouldHaveType(Any::class);
     }
 
-    public function it_can_build_a_not_spec($spec1)
+    public function it_can_build_a_none_spec($spec1)
     {
         $spec1->beADoubleOf(Specification::class);
 
-        $this->beConstructedThrough('not', [$spec1]);
-        $this->shouldHaveType(Not::class);
+        $this->beConstructedThrough('none', [[$spec1]]);
+        $this->shouldHaveType(None::class);
     }
 }

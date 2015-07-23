@@ -9,7 +9,7 @@ use Kayladnls\Spec\Logical\All;
  */
 function all(array $specifications = [])
 {
-    return Builder::both($specifications);
+    return Builder::all($specifications);
 }
 
 /**
@@ -18,7 +18,16 @@ function all(array $specifications = [])
  */
 function any(array $specifications = [])
 {
-    return Builder::either($specifications);
+    return Builder::any($specifications);
+}
+
+/**
+ * @param array $specifications
+ * @return Any
+ */
+function none(array $specifications = [])
+{
+    return Builder::none($specifications);
 }
 
 /**

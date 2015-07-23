@@ -2,7 +2,7 @@
 
 use Kayladnls\Spec\Logical\Any;
 use Kayladnls\Spec\Logical\All;
-use Kayladnls\Spec\Logical\Not;
+use Kayladnls\Spec\Logical\None;
 
 class Builder
 {
@@ -26,10 +26,10 @@ class Builder
 
     /**
      * @param Specification $spec
-     * @return Not
+     * @return None
      */
-    public static function not(Specification $spec)
+    public static function none(array $specifications = [])
     {
-        return new Not($spec);
+        return new None($specifications);
     }
 }
