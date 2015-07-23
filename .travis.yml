@@ -11,4 +11,4 @@ install:
   - composer install
 
 script:
-  - vendor/bin/phpspec run --format=dot
+  - vendor/phpspec/phpspec/bin/phpspec run --format=dot
